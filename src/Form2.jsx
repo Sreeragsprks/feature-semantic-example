@@ -12,6 +12,7 @@ export const Form2 = ({
   nextPage,
   prevPage,
   handleChange,
+  handleSubmit,
   values: { gender, emailId, phoneContact }
 }) => {
   return (
@@ -55,8 +56,7 @@ export const Form2 = ({
           content="submit"
           attached="bottom"
           basic
-          // color="olive"
-          // onClick={nextPage}
+         onClick={handleSubmit}
         />
       </ButtonGroup>
     </React.Fragment>
