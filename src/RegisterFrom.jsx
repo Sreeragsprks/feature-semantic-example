@@ -46,6 +46,7 @@ class RegisterForm extends React.Component {
   handleSubmit = () => {
     alert(this.state);
   };
+
   render() {
     const { pageCount } = this.state;
 

@@ -56,8 +56,9 @@ export const Form2 = ({
           content="submit"
           attached="bottom"
           basic
-          // color="olive"
-          onSubmit={handleSubmit}
+
+         onClick={handleSubmit}
+
         />
       </ButtonGroup>
     </React.Fragment>
