@@ -56,7 +56,9 @@ export const Form2 = ({
           content="submit"
           attached="bottom"
           basic
+
          onClick={handleSubmit}
+
         />
       </ButtonGroup>
     </React.Fragment>
