@@ -43,6 +43,10 @@ class RegisterForm extends React.Component {
     );
   };
 
+  handleSubmit = () => {
+    alert(this.state);
+  };
+
   render() {
     const { pageCount } = this.state;
 
@@ -81,6 +85,7 @@ class RegisterForm extends React.Component {
               nextPage={this.nextPage}
               prevPage={this.previousPage}
               handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
               values={this.state}
             />
           </React.Fragment>
