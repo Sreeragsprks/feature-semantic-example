@@ -85,7 +85,6 @@ class RegisterForm extends React.Component {
             />
           </React.Fragment>
         );
-
       default:
         break;
     }
