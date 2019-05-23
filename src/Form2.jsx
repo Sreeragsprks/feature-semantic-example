@@ -12,6 +12,7 @@ export const Form2 = ({
   nextPage,
   prevPage,
   handleChange,
+  handleSubmit,
   values: { gender, emailId, phoneContact }
 }) => {
   return (
@@ -19,33 +20,19 @@ export const Form2 = ({
       <Segment attached>
         <Form>
           <FormGroup widths="equal">
-            <Form.Radio
-              name="gender"
-              label="Male"
-              value="male"
-              checked={gender === "male"}
-            />
-            <Form.Radio
-              name="gender"
-              label="Female"
-              value="Female"
-              checked={gender === "female"}
-            />
-          </FormGroup>
-          <FormGroup widths="equal">
-            <Form.Field
+            <Form.Input
               name="emailId"
               label="Email Address"
-              control="input"
-              type="email"
               value={emailId}
               placeholder="Email address"
+              onChange={handleChange}
             />
             <Form.Input
               name="phoneContact"
               label="Phone Number"
               value={phoneContact}
               placeholder="xxx xxx xxxx"
+              onChange={handleChange}
             />
           </FormGroup>
         </Form>
@@ -69,8 +56,9 @@ export const Form2 = ({
           content="submit"
           attached="bottom"
           basic
-          // color="olive"
-          // onClick={nextPage}
+
+         onClick={handleSubmit}
+
         />
       </ButtonGroup>
     </React.Fragment>

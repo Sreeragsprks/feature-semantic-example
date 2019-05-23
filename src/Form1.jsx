@@ -1,66 +1,15 @@
 import React, { Fragment } from "react";
 import { Button, Form, Icon, Segment } from "semantic-ui-react";
+import { DateInput } from "semantic-ui-calendar-react";
 
-// class Form1 extends Component {
-//   render() {
-//     const options = [
-//       { key: "Mr", text: "Mr", value: "Mr" },
-//       { key: "Mrs", text: "Mrs", value: "Mrs" }
-//     ];
-//     return (
-//       <Fragment>
-//         <Form>
-//           {/* <Label basic>
-//             <Header
-//               as="h4"
-//               icon={{ name: "user circle" }}
-//               content="Personal data"
-//             />
-//           </Label>
-//           <Divider /> */}
-//           <Segment attached>
-//             <Form.Group widths="equal">
-//               <Form.Input fluid label="First Name" placeholder="First name" />
-//               <Form.Input fluid label="Middle Name" placeholder="Middle name" />
-//               <Form.Input fluid label="Last Name" placeholder="Last name" />
-//             </Form.Group>
-//             <Form.Field control="input" type="date" label="Date of birth" />
-//           </Segment>
-//           <Button
-//             attached="bottom"
-//             content="Save and Continue"
-//             basic
-//             color="olive"
-//           />
-//         </Form>
-//       </Fragment>
-//     );
-//   }
-// }
-
-// export default Form1;
-
-// export const Form1 = ({
-//   nextPage,
-//   handleChange,
-//   values: { firstName, middleName, lastName, dob }
-// }) => {
 export const Form1 = ({
   nextPage,
   handleChange,
-  values: { firstName, middleName, lastName, dob }
+  values: { firstName, middleName, lastName, dob, gender }
 }) => {
   return (
     <Fragment>
       <Form>
-        {/* <Label basic>
-                <Header
-                  as="h4"
-                  icon={{ name: "user circle" }}
-                  content="Personal data"
-                />
-              </Label>
-              <Divider /> */}
         <Segment attached>
           <Form.Group widths="equal">
             <Form.Input
@@ -88,14 +37,30 @@ export const Form1 = ({
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Field
-            control="input"
-            type="date"
+          <DateInput
             name="dob"
-            label="Date of birth"
+            placeholder="Date Of Birth"
             value={dob}
+            iconPosition="left"
             onChange={handleChange}
           />
+          <Form.Group inline>
+            <label>Gender</label>
+            <Form.Radio
+              name="gender"
+              label="Male"
+              value="male"
+              checked={gender === "male"}
+              onChange={handleChange}
+            />
+            <Form.Radio
+              name="gender"
+              label="Female"
+              value="female"
+              checked={gender === "female"}
+              onChange={handleChange}
+            />
+          </Form.Group>
         </Segment>
         <Button
           animated
